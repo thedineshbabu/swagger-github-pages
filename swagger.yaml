@@ -8,12 +8,12 @@ info:
   contact:
     email: abc@xyz.com
 servers:
-  - url: https://core-api.int.bhdev.kfddev.com
+  - url: https://api.int.bhdev.kfddev.com
 tags:
   - name: Organization Career Graph
     description: Everything about your organization career graph
 paths:
-  /api/v2/organizationcareergraph/jobarchitecture/{orgId}:
+  /core-apis-for-im/careerpath/jobarchitecture/{orgId}:
     get:
       tags:
         - Organization Career Graph
@@ -228,10 +228,9 @@ components:
           $ref: '#/components/schemas/V2JobArchitectureDto'
       additionalProperties: false
   securitySchemes:
-    Bearer:
+    apiKey:
       type: apiKey
-      description: Please insert JWT with Bearer into field
-      name: Authorization
       in: header
+      name: Ocp-Apim-Subscription-Key
 security:
-  - Bearer: []
+  - apiKey: []
